@@ -1,11 +1,11 @@
 #!/bin/bash
 echo "欢迎使用一键搭建"
-echo "即将搭建的是4.26版本"
+echo "即将搭建的是1.1版本"
 echo "准备开始安装"
 read -p "回车后开始安装"
 echo "请输入你的内网ip" 
 read -p "内网ip： " ip
-cp /root/PUBG-Radar-Onekey/restart.sh /root/restart.sh
+cp /root/xinleida/restart.sh /root/restart.sh
 chmod +x restart.sh
 wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
 chmod +x shadowsocks-all.sh
@@ -28,11 +28,11 @@ cd libpcap-1.8.1
 make
 make install
 
-git clone https://github.com/794959818/PUBG-Radar-Onekey.git
-cd PUBG-Radar-Onekey/
+git clone https://github.com/916074607/xinleida.git
+cd xinleida/
 npm i
 npm i -g pino
 npm install -g forever
 forever start index.js sniff eth0 $ip | pino
 
-echo "搭建完成"
+echo "PUBG网页雷达搭建完成"
